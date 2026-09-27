@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yachay — Aprende Quechua de Forma Fácil, Práctica y Divertida</title>
+  <meta name="description" content="Plataforma interactiva y oficial de Yachay: aprende Quechua (Runasimi) con diseño artesanal andino, lecciones gamificadas por niveles, pronunciación y cultura milenaria.">
+  <meta name="keywords" content="Yachay, Quechua, Runasimi, Aprender Quechua, Cultura Andina, Tawantinsuyu, Chakana, Bolivia, Perú, Idiomas">
+
+  <!-- Open Graph / Meta Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Yachay — Aprende Quechua">
+  <meta property="og:description" content="Tu camino al Quechua comienza aquí. Aprende de forma fácil, práctica y divertida con Yachay.">
+  <meta property="og:image" content="img/yachi_avatar_circular.png">
+
+  <!-- Favicon con la llamita oficial que está dentro de la app -->
+  <link rel="icon" type="image/png" href="img/yachi_avatar_circular.png">
+
+  <!-- Fuentes Google: Sora, DM Sans y Caveat para notas manuscritas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Sora:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═════════════════════════════════════════════
+     BORDES LATERALES DE TEJIDO ARTESANAL ANDINO (AGUAYO / PALLAY)
+     ═════════════════════════════════════════════ -->
+<div class="textile-border-left" aria-hidden="true"></div>
+<div class="textile-border-right" aria-hidden="true"></div>
+
+<!-- Adorno textil en esquina superior derecha -->
+<div class="textile-corner-tr" aria-hidden="true"></div>
+
+<!-- Tocapus flotantes decorativos laterales -->
+<div class="floating-tocapu tocapu-hero-right" aria-hidden="true"></div>
+<div class="floating-tocapu tocapu-features-right" aria-hidden="true"></div>
+
+<!-- ═════════════════════════════════════════════
+     BARRA DE NAVEGACIÓN SUPERIOR
+     ═════════════════════════════════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <!-- Ícono con la llamita oficial que está dentro de la app -->
+    <a href="#inicio" class="brand-link">
+      <div class="brand-logo-wrap">
+        <img src="img/yachi_avatar_circular.png" alt="Yachi Mascota Oficial Yachay">
+      </div>
+      <div class="brand-text-block">
+        <span class="brand-name">Yachay</span>
+        <span class="brand-sub">Aprende Quechua</span>
+      </div>
+    </a>
+
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+      <li><a href="#caracteristicas" class="nav-link">Características</a></li>
+      <li><a href="#justificacion" class="nav-link">Propósito</a></li>
+      <li><a href="#como-funciona" class="nav-link">Cómo funciona</a></li>
+      <li><a href="#guia-estudiantes" class="nav-link">Guía del Alumno</a></li>
+      <li><a href="#descarga" class="nav-link">Descargar</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <!-- Botón de acción Iniciar / Descargar -->
+      <a href="#descarga" class="btn-nav-action">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+        Descargar app
+      </a>
+
+      <!-- Botón menú móvil -->
+      <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú de navegación">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═════════════════════════════════════════════
+     BLOQUE PANORÁMICO ANDINO (HERO + CARACTERÍSTICAS INTEGRADOS)
+     ═════════════════════════════════════════════ -->
+<div class="hero-and-features-backdrop">
+  <!-- Watermarks de Tocapus geométricos sutiles -->
+  <div class="tocapu-wm wm-top-left" aria-hidden="true"></div>
+  <div class="tocapu-wm wm-top-right" aria-hidden="true"></div>
+  <div class="tocapu-wm wm-mid-right" aria-hidden="true"></div>
+  <div class="tocapu-wm wm-bottom-center" aria-hidden="true"></div>
+
+  <!-- HERO SECTION (DISEÑO CÁLIDO CON PAISAJE, PASTOR ANDINO Y YACHI) -->
+  <header class="hero-section" id="inicio">
+    <div class="hero-container">
+      <!-- Columna Izquierda: Texto de Bienvenida -->
+      <div class="hero-text-side">
+        <div class="hero-eyebrow">
+          <span class="tocapu-diamond"></span>
+          <span>Tu camino al Quechua comienza aquí</span>
+        </div>
+
+        <h1 class="hero-main-title">Yachay</h1>
+
+        <h2 class="hero-tagline">
+          Aprende Quechua de forma fácil, práctica y divertida.
+        </h2>
+
+        <p class="hero-description">
+          Descubre un nuevo idioma, conecta con la cultura andina y abre la puerta a nuevas oportunidades con un método gamificado y progresivo.
+        </p>
+
+        <div class="hero-buttons-row">
+          <a href="#descarga" class="btn-play-store">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+            <span>Descargar APK</span>
+          </a>
+
+          <a href="#caracteristicas" class="btn-learn-more">
+            <span>Conoce más</span>
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Columna Derecha: Mockup del Celular con la App Real -->
+      <div class="hero-visual-side">
+        <div class="hero-device-stage">
+          <div class="hero-phone-frame" title="Yachay App Oficial">
+            <div class="hero-phone-speaker"></div>
+            <img src="img/web/inicio_app.png" alt="Pantalla Oficial de Yachay" class="hero-phone-screen">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECCIÓN 5 CÍRCULOS: "¿QUÉ HACE ÚNICA A YACHAY?" -->
+  <section class="features-pills-section" id="caracteristicas">
+    <div class="section-title-handwritten">
+      <span class="tocapu-diamond"></span>
+      <span>¿Qué hace única a Yachay?</span>
+    </div>
+
+    <div class="features-pills-grid">
+      <!-- 1. Terracota: Montaña -->
+      <div class="feature-pill-item">
+        <div class="pill-icon-circle circle-terracotta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 20h18L14 6l-4 8-3-4-4 10z"/>
+          </svg>
+        </div>
+        <h3 class="pill-title">Contenido real y cultural</h3>
+        <p class="pill-desc">
+          Aprende con palabras, frases y expresiones del quechua cotidiano, con un enfoque en la cultura andina.
+        </p>
+      </div>
+
+      <!-- 2. Verde: Micrófono -->
+      <div class="feature-pill-item">
+        <div class="pill-icon-circle circle-green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2a3 3 0 00-3 3v7a3 3 0 006 0V5a3 3 0 00-3-3z"/>
+            <path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/>
+          </svg>
+        </div>
+        <h3 class="pill-title">Pronunciación guiada</h3>
+        <p class="pill-desc">
+          Practica tu pronunciación y recibe correcciones con inteligencia artificial.
+        </p>
+      </div>
+
+      <!-- 3. Dorado: Gamepad -->
+      <div class="feature-pill-item">
+        <div class="pill-icon-circle circle-gold">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="6" width="20" height="12" rx="6"/>
+            <path d="M6 12h4M8 10v4M15 11h.01M17 13h.01"/>
+          </svg>
+        </div>
+        <h3 class="pill-title">Aprendizaje gamificado</h3>
+        <p class="pill-desc">
+          Gana experiencia, supera niveles y mantén tu racha de aprendizaje.
+        </p>
+      </div>
+
+      <!-- 4. Turquesa: Traductor / Idiomas -->
+      <div class="feature-pill-item">
+        <div class="pill-icon-circle circle-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 8l6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/>
+          </svg>
+        </div>
+        <h3 class="pill-title">Traductor integrado</h3>
+        <p class="pill-desc">
+          Traduce frases del español al quechua y viceversa, cuando lo necesites.
+        </p>
+      </div>
+
+      <!-- 5. Marrón: Sin conexión -->
+      <div class="feature-pill-item">
+        <div class="pill-icon-circle circle-brown">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 1l22 22M16.72 11.06A10.94 10.94 0 0119 12.55M5 12.55a10.94 10.94 0 015.17-2.39M10.71 5.05A16 16 0 0122.58 9M1.42 9a15.91 15.91 0 014.7-2.88M8.53 16.11a6 6 0 016.95 0M12 20h.01"/>
+          </svg>
+        </div>
+        <h3 class="pill-title">Funciona sin conexión</h3>
+        <p class="pill-desc">
+          Lleva tu aprendizaje a donde quieras, incluso sin internet.
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═════════════════════════════════════════════
+     SECCIÓN PROPÓSITO: JUSTIFICACIÓN Y MANIFIESTO CULTURAL
+     ═════════════════════════════════════════════ -->
+<section class="justification-section" id="justificacion">
+  <div class="justification-container">
+    <!-- Columna Izquierda: ¿Por qué creamos Yachay? (Justificación del Proyecto) -->
+    <div class="justification-text-side">
+      <div class="section-badge-pill">
+        <span class="tocapu-diamond"></span>
+        <span>Propósito & Identidad Andina</span>
+      </div>
+
+      <h2 class="justification-title">¿Por qué creamos Yachay?</h2>
+
+      <p class="justification-lead">
+        El Quechua (<em>Runa Simi</em>) es la voz viva de los Andes y portador de una cosmovisión milenaria de armonía, respeto y reciprocidad (<em>Sumaq Kawsay</em>). Yachay nace como un compromiso para revitalizar nuestra lengua originaria y ponerla al alcance de las nuevas generaciones a través de la tecnología accesible y el aprendizaje lúdico.
+      </p>
+
+      <div class="justification-pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon">🏔️</div>
+          <div class="pillar-body">
+            <strong>Preservación Cultural</strong>
+            <span>Proteger y difundir el saber ancestral andino frente a la pérdida lingüística intergeneracional.</span>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">✨</div>
+          <div class="pillar-body">
+            <strong>Acceso Libre y Universal</strong>
+            <span>Método progresivo, gamificado y 100% gratuito sin barreras socioeconómicas.</span>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">🦅</div>
+          <div class="pillar-body">
+            <strong>Identidad y Orgullo</strong>
+            <span>Transformar el estigma histórico en motivo de orgullo andino para las juventudes del mundo.</span>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">📱</div>
+          <div class="pillar-body">
+            <strong>Tecnología Inclusiva</strong>
+            <span>Práctica fonética con IA, diccionario inteligente y modo de estudio 100% sin conexión.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="doodle-sumaq">
+        <span>Kausachun Runa Simi! 🏔️✨</span>
+        <svg width="28" height="20" viewBox="0 0 28 20" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M2 18L10 6L16 14L20 8L26 18H2Z"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Columna Derecha: Tarjeta de Realidad y Manifiesto de Impacto -->
+    <div class="justification-impact-card">
+      <div class="impact-card-header">
+        <span class="impact-chip">El Quechua Hoy en los Andes</span>
+        <h3>Nuestra Misión Colectiva</h3>
+      </div>
+
+      <div class="impact-stats-list">
+        <div class="impact-stat-item">
+          <div class="stat-number">+8 Millones</div>
+          <p class="stat-desc">
+            De personas hablan Quechua en Sudamérica, consolidándose como la lengua indígena viva más hablada de toda América.
+          </p>
+        </div>
+
+        <div class="impact-stat-item">
+          <div class="stat-number">Brecha Generacional</div>
+          <p class="stat-desc">
+            En entornos urbanos, menos del 25% de los hijos de quechuahablantes aprenden la lengua en su hogar por falta de herramientas lúdicas e interactivas.
+          </p>
+        </div>
+
+        <div class="impact-stat-item">
+          <div class="stat-number">Puente Digital</div>
+          <p class="stat-desc">
+            Yachay convierte el smartphone en un aula interactiva de bolsillo, demostrando que una lengua milenaria vive y evoluciona en la era digital.
+          </p>
+        </div>
+      </div>
+
+      <div class="impact-manifesto-quote">
+        <span class="quote-symbol">“</span>
+        <p>
+          Una lengua no desaparece porque quienes la hablen dejen de existir, sino porque el mundo deja de escucharla y las nuevas generaciones dejan de hablarla. Cada lección completada en Yachay es una semilla viva para que el Runa Simi siga latiendo.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════════
+     SECCIÓN: ¿CÓMO FUNCIONA? (PASOS DE LA EXPERIENCIA)
+     ═════════════════════════════════════════════ -->
+<section class="how-it-works-banner-section" id="como-funciona">
+  <div class="how-banner-container">
+    <div class="section-title-handwritten" style="justify-content: center; margin-bottom: 12px;">
+      <span class="tocapu-diamond"></span>
+      <span>¿Cómo funciona Yachay?</span>
+    </div>
+    <p class="how-banner-subtitle">
+      Tu camino formativo en 4 pasos esenciales antes de iniciar el viaje del saber:
+    </p>
+
+    <div class="how-steps-grid-4">
+      <!-- Paso 1 -->
+      <div class="how-step-box">
+        <div class="how-step-badge badge-step-1">1</div>
+        <h4>Crea tu cuenta</h4>
+        <p>Es rápido, libre y seguro. Tu progreso y racha se sincronizan al instante en la nube.</p>
+      </div>
+
+      <!-- Paso 2 -->
+      <div class="how-step-box">
+        <div class="how-step-badge badge-step-2">2</div>
+        <h4>Explora los niveles</h4>
+        <p>Desde el abecedario andino (Achahala) y fonética hasta diálogos y expresiones reales del Ayllu.</p>
+      </div>
+
+      <!-- Paso 3 -->
+      <div class="how-step-box">
+        <div class="how-step-badge badge-step-3">3</div>
+        <h4>Aprende y practica</h4>
+        <p>Desafíos interactivos de emparejamiento, pronunciación guiada y audio de hablantes nativos.</p>
+      </div>
+
+      <!-- Paso 4 -->
+      <div class="how-step-box">
+        <div class="how-step-badge badge-step-4">4</div>
+        <h4>Gana experiencia</h4>
+        <p>Acumula puntos XP, mantén tu racha diaria y obtén tu Acreditación Sentimental como Amawta.</p>
+      </div>
+    </div>
+
+    <div class="how-connector-hint">
+      <span>👉 Conoce a continuación el funcionamiento detallado pantalla a pantalla en la <strong>Guía del Alumno</strong></span>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════════
+     GUÍA DEL ALUMNO PASO A PASO (EL CAMINO DEL SABER)
+     ═════════════════════════════════════════════ -->
+<section class="guide-section" id="guia-estudiantes">
+  <div class="guide-container">
+    <div class="section-title-handwritten" style="margin-bottom: 30px;">
+      <span class="tocapu-diamond"></span>
+      <span>Guía del Alumno: El Camino del Saber (Qhapaq Ñan)</span>
+    </div>
+
+    <!-- Paso 1: Onboarding y Bienvenida -->
+    <div class="guide-step-card">
+      <div class="guide-img-box">
+        <div class="guide-phone-frame" title="Haz clic para ampliar la pantalla">
+          <div class="guide-phone-speaker"></div>
+          <img src="img/web/inicio_app.png" alt="Pantalla de Bienvenida y Onboarding de Yachay">
+        </div>
+      </div>
+      <div class="guide-info-box">
+        <div class="guide-badge-pill">
+          <span>Paso 1 · Bienvenida</span>
+        </div>
+        <h4>Bienvenida con Yachi y Acceso Rápido</h4>
+        <p>
+          Al iniciar la app, la llamita <strong>Yachi</strong> te da una cálida bienvenida. Pulsa <strong>Empezar</strong> para iniciar de inmediato tu ruta de aprendizaje o ingresa con <strong>Ya tengo cuenta</strong> para sincronizar tu progreso y lecciones.
+        </p>
+        <div class="guide-tip-note">
+          🦙 <strong>Consejo de Yachi:</strong> Aprende quechua paso a paso y habla con confianza desde tu primera sesión.
+        </div>
+      </div>
+    </div>
+
+    <!-- Paso 2: Mapa Curricular y Sendero de Niveles -->
+    <div class="guide-step-card reverse">
+      <div class="guide-img-box">
+        <div class="guide-phone-frame" title="Haz clic para ampliar la pantalla">
+          <div class="guide-phone-speaker"></div>
+          <img src="img/web/inicio.png" alt="Mapa de Niveles y Sendero del Saber en Yachay">
+        </div>
+      </div>
+      <div class="guide-info-box">
+        <div class="guide-badge-pill">
+          <span>Paso 2 · Sendero de Niveles</span>
+        </div>
+        <h4>Sendero de Niveles y Barra de Estado</h4>
+        <p>
+          En la pestaña <strong>Inicio</strong> encuentras el sendero formativo <em>Nivel 1 - Achahala y Fonética</em> con las lecciones de vocales y consonantes del Runasimi. La barra superior muestra tus puntos XP (⚡), gemas sagradas (💎), vidas (❤️ 4/5) y tu racha de días (🔥).
+        </p>
+        <div class="guide-tip-note">
+          ⛰️ <strong>El Camino del Saber:</strong> Completa las 6 lecciones en orden para desbloquear el examen bloqueante de nivel.
+        </div>
+      </div>
+    </div>
+
+    <!-- Paso 3: Desafíos Interactivos de Emparejamiento -->
+    <div class="guide-step-card">
+      <div class="guide-img-box">
+        <div class="guide-phone-frame" title="Haz clic para ampliar la pantalla">
+          <div class="guide-phone-speaker"></div>
+          <img src="img/web/lecciones.png" alt="Desafíos Interactivos de Emparejar con Significado">
+        </div>
+      </div>
+      <div class="guide-info-box">
+        <div class="guide-badge-pill">
+          <span>Paso 3 · Prácticas Dinámicas</span>
+        </div>
+        <h4>Emparejar Palabras con su Significado</h4>
+        <p>
+          Pon a prueba tu comprensión relacionando términos en quechua con su traducción al español: como <em>Urpi</em> (Paloma), <em>Inti</em> (Sol) y <em>Allin</em> (Bueno / Bien). Cuenta con audio nativo y barra de progreso en vivo.
+        </p>
+        <div class="guide-tip-note">
+          🎯 <strong>Pedagogía Activa:</strong> Cada par correcto te suma 10 XP y fortalece tu memoria visual y auditiva.
+        </div>
+      </div>
+    </div>
+
+    <!-- Paso 4: Mercado Andino y Tienda de Yachay -->
+    <div class="guide-step-card reverse">
+      <div class="guide-img-box">
+        <div class="guide-phone-frame" title="Haz clic para ampliar la pantalla">
+          <div class="guide-phone-speaker"></div>
+          <img src="img/web/tienda.png" alt="Mercado Andino y Tienda de Yachay">
+        </div>
+      </div>
+      <div class="guide-info-box">
+        <div class="guide-badge-pill">
+          <span>Paso 4 · Mercado Andino</span>
+        </div>
+        <h4>Tienda de Yachay: Potenciadores y Vidas</h4>
+        <p>
+          Canjea tus gemas sagradas ganadas al estudiar por potenciadores esenciales: recarga vidas individuales o completa tus 5 corazones, activa la <em>Poción de Sabiduría</em> para duplicar tus puntos de XP o consigue el <em>Amuleto de Hielo</em> para proteger tu racha.
+        </p>
+        <div class="guide-tip-note">
+          💎 <strong>Economía Gamificada:</strong> Estudia a diario para acumular gemas sagradas sin gastar dinero real.
+        </div>
+      </div>
+    </div>
+
+    <!-- Paso 5: Traductor Quechua Integrado -->
+    <div class="guide-step-card">
+      <div class="guide-img-box">
+        <div class="guide-phone-frame" title="Haz clic para ampliar la pantalla">
+          <div class="guide-phone-speaker"></div>
+          <img src="img/web/traductor.png" alt="Traductor Yachay y Diccionario de Bolsillo">
+        </div>
+      </div>
+      <div class="guide-info-box">
+        <div class="guide-badge-pill">
+          <span>Paso 5 · Traductor</span>
+        </div>
+        <h4>Simi T'ikraq: Diccionario y Traductor</h4>
+        <p>
+          Traduce al instante entre español y quechua con pronunciación fonética nativa asistida por IA. Incluye dictado por voz y acceso rápido a expresiones andinas cotidianas como <em>Allillanchu?</em>, <em>Allin p'unchaw</em>, <em>Añay</em> y el saludo <em>Tupananchiskama</em>.
+        </p>
+        <div class="guide-tip-note">
+          💡 <strong>¿Sabías qué?</strong> El quechua es un idioma aglutinante: añade sufijos a la raíz para expresar cortesía, certeza o lugar.
+        </div>
+      </div>
+    </div>
+
+    <!-- Paso 6: La Biblioteca Andina (Yachay Wasi) -->
+    <div class="guide-step-card reverse">
+      <div class="guide-img-box">
+        <div class="guide-phone-frame" title="Haz clic para ampliar la pantalla">
+          <div class="guide-phone-speaker"></div>
+          <img src="img/web/biblioteca.png" alt="La Biblioteca Andina y Cuentos del Ayllu">
+        </div>
+      </div>
+      <div class="guide-info-box">
+        <div class="guide-badge-pill">
+          <span>Paso 6 · Biblioteca</span>
+        </div>
+        <h4>La Biblioteca Andina (Yachay Wasi)</h4>
+        <p>
+          En la sección <strong>Explorar</strong>, accede a lecturas ancestrales con total libertad: sin vidas, niveles ni exámenes. Disfruta los <em>Cuentos del Ayllu</em> como <em>El Zorro y el Cóndor</em>, la leyenda de <em>Manco Cápac y Mama Ocllo</em> y saberes sobre la gastronomía ancestral como la <em>Pachamanka</em>.
+        </p>
+        <div class="guide-tip-note">
+          📖 <strong>Estantería Abierta:</strong> Explora más de 35 entradas culturales para enriquecer tu cosmovisión andina.
+        </div>
+      </div>
+    </div>
+
+    <!-- Paso 7: Perfil del Alumno y Estadísticas -->
+    <div class="guide-step-card">
+      <div class="guide-img-box">
+        <div class="guide-phone-frame" title="Haz clic para ampliar la pantalla">
+          <div class="guide-phone-speaker"></div>
+          <img src="img/web/perfil.png" alt="Perfil del Alumno y Estadísticas de Estudio">
+        </div>
+      </div>
+      <div class="guide-info-box">
+        <div class="guide-badge-pill">
+          <span>Paso 7 · Perfil</span>
+        </div>
+        <h4>Perfil del Alumno y Estadísticas</h4>
+        <p>
+          En la pestaña <strong>Perfil</strong>, consulta tus estadísticas generales: lecciones completadas, porcentaje de precisión, medallas obtenidas y logros alcanzados en tu viaje por el Qhapaq Ñan del quechua.
+        </p>
+        <div class="guide-tip-note">
+          🌟 <strong>Constancia:</strong> Revisa tu evolución semanal y mantén vivo el legado de los saberes andinos.
+        </div>
+      </div>
+    </div>
+
+    <!-- Paso 8: Acreditación Sentimental (Certificado de Graduación) -->
+    <div class="guide-step-card reverse">
+      <div class="guide-img-box">
+        <div class="guide-phone-frame" title="Haz clic para ampliar la pantalla">
+          <div class="guide-phone-speaker"></div>
+          <img src="img/web/recompensa_final.png" alt="Certificado de Acreditación Sentimental Amawta del Runa Simi">
+        </div>
+      </div>
+      <div class="guide-info-box">
+        <div class="guide-badge-pill">
+          <span>Paso 8 · Certificado</span>
+        </div>
+        <h4>Acreditación Sentimental: ¡Gran Amawt'a!</h4>
+        <p>
+          Al culminar satisfactoriamente los módulos de Achahala, Yupeykuna y Expresiones del Ayllu, Yachay te confiere el <strong>Certificado de Acreditación Sentimental</strong>, reconociéndote con el título honorífico de <em>Amawta del Runa Simi (Maestro de la Sabiduría Andina)</em> como guardián de la sabiduría ancestral andina con código de registro y opción de compartirlo en redes.
+        </p>
+        <div class="guide-tip-note">
+          🏆 <strong>Reconocimiento:</strong> Un homenaje a tu dedicación y amor por la cultura y lengua quechua.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════════
+     SECCIÓN DE DESCARGA (DOWNLOAD SECTION)
+     ═════════════════════════════════════════════ -->
+<section class="download-section" id="descarga">
+  <div class="download-inner">
+    <div class="download-badge">
+      <span class="tocapu-diamond"></span>
+      <span>Versión Oficial Disponible</span>
+    </div>
+
+    <h2>Descarga la Aplicación Yachay</h2>
+    <p>
+      Instala la APK oficial en tu dispositivo Android o explora el código fuente del proyecto en GitHub. Da hoy el primer paso hacia el aprendizaje del Quechua.
+    </p>
+
+    <div class="download-cta-box">
+      <!-- Botón de Descarga APK Directa -->
+      <a href="https://github.com/Yessyess22/Yachay-idiomas" class="download-btn" target="_blank" rel="noopener noreferrer">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+        </svg>
+        Descargar APK Android
+      </a>
+
+      <!-- Botón Repositorio GitHub -->
+      <a href="https://github.com/Yessyess22/Yachay-idiomas.git" class="repo-btn" target="_blank" rel="noopener noreferrer">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+        </svg>
+        Ver en GitHub
+      </a>
+    </div>
+
+    <div class="download-specs">
+      <span>📱 Android 8.0 o superior</span>
+      <span>🍎 iOS vía Expo Go</span>
+      <span>⚡ 100% Funcional Offline</span>
+      <span>🔒 Acceso Gratuito y Libre</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════════
+     PREGUNTAS FRECUENTES (FAQ ACCORDION)
+     ═════════════════════════════════════════════ -->
+<section class="faq-section" id="faq">
+  <div class="faq-container">
+    <div class="section-title-handwritten" style="justify-content: center; margin-bottom: 24px;">
+      <span class="tocapu-diamond"></span>
+      <span>Preguntas Frecuentes</span>
+    </div>
+
+    <div class="faq-list">
+      <!-- FAQ 1 -->
+      <div class="faq-item active">
+        <button class="faq-question">
+          <span>¿Qué variante del Quechua se enseña en Yachay?</span>
+          <div class="faq-icon">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+          </div>
+        </button>
+        <div class="faq-answer">
+          Yachay enseña la variante <strong>Quechua Sureño (Chanka y Cusco-Collao)</strong>, la más hablada y difundida en Perú y Bolivia, adoptando la ortografía oficial trivocálica (A, I, U) aprobada para fines educativos.
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Puedo aprender y practicar sin conexión a internet?</span>
+          <div class="faq-icon">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+          </div>
+        </button>
+        <div class="faq-answer">
+          ¡Totalmente! La aplicación cuenta con almacenamiento offline. Puedes seguir estudiando tus lecciones en zonas rurales o sin cobertura, y al conectarte de nuevo tu racha y tus puntos XP se sincronizarán automáticamente.
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Tiene costo o compras con dinero real dentro de la app?</span>
+          <div class="faq-icon">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+          </div>
+        </button>
+        <div class="faq-answer">
+          No. Yachay es una iniciativa cultural y pedagógica de acceso gratuito. Las gemas se obtienen únicamente al estudiar y se usan para desbloquear trajes tradicionales para Yachi y reponer vidas.
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Cómo se desbloquea el siguiente nivel de lecciones?</span>
+          <div class="faq-icon">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+          </div>
+        </button>
+        <div class="faq-answer">
+          Para garantizar un progreso real, cada nivel cuenta con un Examen de Cierre bloqueante. Se activa al completar las lecciones del nivel y requiere un mínimo del 70% de aciertos para habilitar el nivel siguiente.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════════
+     FOOTER EN MARRÓN TIERRA CHOCOLATE PROFUNDO (#23120B)
+     ═════════════════════════════════════════════ -->
+<footer class="artisan-footer">
+  <div class="footer-inner">
+    <div class="footer-callout-title">
+      Empieza hoy tu viaje con Yachay
+    </div>
+    <div class="footer-callout-desc">
+      Descarga la app y da el primer paso hacia un nuevo idioma y su sabiduría ancestral.
+    </div>
+
+
+    <!-- Garabato de llamita y Sumaq kawsay -->
+    <div class="footer-doodle-llama">
+      Sumaq kawsay ✨ 🦙
+    </div>
+
+    <div class="footer-credits-grid">
+      <div class="footer-credits-col">
+        <h4 class="credits-title">COLABORADORES</h4>
+        <ul class="credits-list">
+          <li><span>Oscar Alejandro Segovia Villarreal</span></li>
+          <li><span>Yessica Shirley Escobar Gutierres</span></li>
+          <li><span>Alejandro Padilla Ponce</span></li>
+        </ul>
+      </div>
+
+      <div class="footer-app-col">
+        <h3 class="credits-app-name">Yachay</h3>
+        <p class="credits-app-desc">
+          Aplicación Móvil para el Aprendizaje<br>
+          de la Lengua Quechua
+        </p>
+        <span class="credits-copy">© 2026</span>
+      </div>
+    </div>
+
+    <div class="footer-bottom-row">
+      <ul class="footer-nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#caracteristicas">Características</a></li>
+        <li><a href="#justificacion">Propósito</a></li>
+        <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#guia-estudiantes">Guía del Alumno</a></li>
+        <li><a href="https://github.com/Yessyess22/Yachay-idiomas.git" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- ═════════════════════════════════════════════
+     MODAL LIGHTBOX PARA AMPLIAR CAPTURAS
+     ═════════════════════════════════════════════ -->
+<div class="lightbox-modal" id="lightboxModal">
+  <div class="lightbox-content">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar modal">&times;</button>
+    <img id="lightboxImg" src="" alt="Captura de Pantalla Ampliada">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+</div>
+
+<!-- ═════════════════════════════════════════════
+     BOTÓN FLOTANTE "VOLVER ARRIBA"
+     ═════════════════════════════════════════════ -->
+<button class="back-to-top" id="backToTop" aria-label="Volver arriba" title="Volver arriba">
+  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+    <path d="M18 15l-6-6-6 6"/>
+  </svg>
+</button>
+
+<!-- Script principal interactivo -->
+<script src="script.js"></script>
+
+</body>
+</html>
