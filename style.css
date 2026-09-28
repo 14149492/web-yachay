@@ -1888,26 +1888,9 @@ footer.artisan-footer {
   background: #882A1E;
   transform: translateY(-3px);
 }
-
-/* ==========================================================================
-   BADGE PRÓXIMAMENTE EN BOTÓN DESCARGA APK
-   ========================================================================== */
-.badge-apk-soon {
-  display: inline-block;
-  background: #F59E0B;
-  color: #24140D;
-  font-family: 'Sora', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 800;
-  padding: 3px 8px;
-  border-radius: var(--radius-full);
-  margin-left: 6px;
-  letter-spacing: 0.3px;
-  text-transform: uppercase;
-}
-
 /* ==========================================================================
    SECCIÓN CONTACTO Y UBICACIÓN UPDS COCHABAMBA
+   (Cards translúcidas con el mismo diseño glassmorphism del resto del sitio)
    ========================================================================== */
 .contact-section {
   padding: 80px 0;
@@ -1936,14 +1919,24 @@ footer.artisan-footer {
   align-items: stretch;
 }
 
+/* Tarjetas translúcidas con el mismo estilo del resto del sitio */
 .contact-card {
-  background: var(--bg-card-parchment);
-  border: 1.5px solid var(--border-card);
+  background: rgba(248, 241, 229, 0.32);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255, 255, 255, 0.50);
   border-radius: var(--radius-lg);
   padding: 36px 32px;
-  box-shadow: var(--shadow-warm);
+  box-shadow: 0 8px 32px rgba(42, 26, 18, 0.08);
   display: flex;
   flex-direction: column;
+  transition: all var(--transition);
+}
+
+.contact-card:hover {
+  background: rgba(248, 241, 229, 0.50);
+  border-color: rgba(200, 90, 50, 0.4);
+  box-shadow: 0 12px 36px rgba(42, 26, 18, 0.14);
 }
 
 .contact-card-title {
@@ -1961,6 +1954,101 @@ footer.artisan-footer {
   font-size: 0.95rem;
   margin-bottom: 24px;
   line-height: 1.55;
+}
+
+/* Autocompletar con Google */
+.google-auth-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.btn-google-auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(4px);
+  color: #3C4043;
+  border: 1.5px solid rgba(200, 180, 160, 0.6);
+  border-radius: var(--radius-full);
+  padding: 11px 18px;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(42, 26, 18, 0.08);
+  transition: all var(--transition);
+}
+
+.btn-google-auth:hover {
+  background: #FFFFFF;
+  border-color: var(--thread-red);
+  box-shadow: 0 4px 14px rgba(42, 26, 18, 0.14);
+  transform: translateY(-2px);
+}
+
+.google-user-connected {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(240, 253, 244, 0.88);
+  border: 1.5px solid #86EFAC;
+  border-radius: var(--radius-full);
+  padding: 8px 16px;
+  font-size: 0.84rem;
+  color: #166534;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.google-user-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn-disconnect-google {
+  background: none;
+  border: none;
+  color: #15803D;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 8px;
+  padding: 2px 6px;
+}
+
+.btn-disconnect-google:hover {
+  color: #B91C1C;
+}
+
+.google-divider-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 4px 0 6px 0;
+}
+
+.google-divider-row .line {
+  flex: 1;
+  height: 1px;
+  background: rgba(200, 180, 160, 0.45);
+}
+
+.google-divider-row .text {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 /* Formulario */
@@ -2010,8 +2098,10 @@ footer.artisan-footer {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.95rem;
   color: var(--text-dark);
-  background: #FFFDF9;
-  border: 1.5px solid var(--border-card);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1.5px solid rgba(200, 180, 160, 0.55);
   border-radius: var(--radius-sm);
   padding: 12px 14px 12px 42px;
   transition: all var(--transition);
@@ -2028,8 +2118,15 @@ footer.artisan-footer {
 .input-wrap select:focus,
 .contact-form textarea:focus {
   border-color: var(--thread-red);
-  background: #FFFFFF;
+  background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 0 0 3px rgba(168, 40, 26, 0.12);
+}
+
+.input-wrap input.readonly-google {
+  background: rgba(240, 253, 244, 0.65);
+  border-color: #86EFAC;
+  color: #166534;
+  font-weight: 600;
 }
 
 .input-wrap input.error,
@@ -2082,7 +2179,7 @@ footer.artisan-footer {
 
 /* Mensaje de éxito post-envío */
 .form-success-box {
-  background: #F0FDF4;
+  background: rgba(240, 253, 244, 0.85);
   border: 1.5px solid #86EFAC;
   border-radius: var(--radius-md);
   padding: 28px 24px;
@@ -2181,7 +2278,7 @@ footer.artisan-footer {
   margin-top: auto;
   border-radius: var(--radius-md);
   overflow: hidden;
-  border: 1.5px solid var(--border-card);
+  border: 1.5px solid rgba(200, 180, 160, 0.45);
   box-shadow: 0 4px 14px rgba(42, 26, 18, 0.08);
 }
 
@@ -2197,8 +2294,9 @@ footer.artisan-footer {
   align-items: center;
   justify-content: space-between;
   padding: 10px 14px;
-  background: #EFE4D2;
-  border-top: 1px solid var(--border-card);
+  background: rgba(239, 228, 210, 0.85);
+  backdrop-filter: blur(4px);
+  border-top: 1px solid rgba(200, 180, 160, 0.45);
   font-size: 0.82rem;
 }
 
@@ -2220,316 +2318,6 @@ footer.artisan-footer {
 .btn-open-map:hover {
   opacity: 0.8;
   text-decoration: underline;
-}
-
-/* ==========================================================================
-   REDES SOCIALES EN FOOTER
-   ========================================================================== */
-.social-section-block {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.social-title {
-  display: block;
-  font-family: 'Sora', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #E2D4C3;
-  margin-bottom: 12px;
-}
-
-.social-links-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.social-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.08);
-  color: #EDE2CF;
-  text-decoration: none;
-  font-family: 'Sora', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 700;
-  padding: 8px 16px;
-  border-radius: var(--radius-full);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  transition: all var(--transition);
-}
-
-.social-btn:hover {
-  transform: translateY(-2px);
-  color: #FFFFFF;
-}
-
-.social-btn.btn-facebook:hover { background: #1877F2; border-color: #1877F2; }
-.social-btn.btn-instagram:hover { background: #E1306C; border-color: #E1306C; }
-.social-btn.btn-tiktok:hover { background: #000000; border-color: #FE2C55; box-shadow: 0 0 10px rgba(254, 44, 85, 0.4); }
-.social-btn.btn-youtube:hover { background: #FF0000; border-color: #FF0000; }
-.social-btn.btn-whatsapp:hover { background: #25D366; border-color: #25D366; }
-.social-btn.btn-github:hover { background: #333333; border-color: #ffffff; }
-
-/* ==========================================================================
-   MAPA DEL SITIO (SITEMAP) EN FOOTER
-   ========================================================================== */
-.sitemap-block {
-  width: 100%;
-  margin-top: 36px;
-  margin-bottom: 36px;
-  padding: 28px 24px;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-md);
-}
-
-.sitemap-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-}
-
-.sitemap-main-title {
-  font-family: 'Sora', sans-serif;
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: #F5EFE6;
-  letter-spacing: -0.3px;
-}
-
-.sitemap-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-.sitemap-col-title {
-  font-family: 'Sora', sans-serif;
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--thread-gold);
-  margin-bottom: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.sitemap-links {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.sitemap-links a {
-  color: #C3B4A2;
-  text-decoration: none;
-  font-size: 0.82rem;
-  transition: all var(--transition);
-  display: inline-block;
-}
-
-.sitemap-links a:hover {
-  color: #FFFFFF;
-  transform: translateX(4px);
-}
-
-/* ==========================================================================
-   MODAL APK PRÓXIMAMENTE
-   ========================================================================== */
-.apk-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(35, 18, 11, 0.88);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  z-index: 2100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--transition);
-}
-
-.apk-modal.open {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.apk-modal-content {
-  background: var(--bg-card-parchment);
-  border: 2px solid var(--thread-gold);
-  border-radius: var(--radius-lg);
-  max-width: 520px;
-  width: 100%;
-  padding: 36px 30px;
-  position: relative;
-  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
-  animation: modalPop 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@keyframes modalPop {
-  0% { transform: scale(0.92) translateY(20px); opacity: 0; }
-  100% { transform: scale(1) translateY(0); opacity: 1; }
-}
-
-.apk-modal-close {
-  position: absolute;
-  top: 16px;
-  right: 18px;
-  background: none;
-  border: none;
-  font-size: 1.6rem;
-  line-height: 1;
-  color: var(--text-muted);
-  cursor: pointer;
-  transition: color var(--transition);
-}
-
-.apk-modal-close:hover {
-  color: var(--thread-red);
-}
-
-.apk-modal-header {
-  text-align: center;
-  margin-bottom: 18px;
-}
-
-.apk-modal-avatar {
-  font-size: 3rem;
-  margin-bottom: 6px;
-}
-
-.apk-modal-badge {
-  display: inline-block;
-  background: #FEF3C7;
-  color: #92400E;
-  font-family: 'Sora', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 800;
-  padding: 4px 12px;
-  border-radius: var(--radius-full);
-  margin-bottom: 10px;
-  border: 1px solid #FCD34D;
-}
-
-.apk-modal-header h3 {
-  font-family: 'Sora', sans-serif;
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: var(--text-dark);
-  line-height: 1.25;
-}
-
-.apk-modal-body p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 16px;
-  text-align: center;
-}
-
-.apk-modal-features {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background: #EDE1CD;
-  border-radius: var(--radius-md);
-  padding: 16px;
-  margin-bottom: 22px;
-}
-
-.apk-feature-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.88rem;
-  color: var(--text-dark);
-  font-weight: 600;
-}
-
-.apk-modal-actions {
-  display: flex;
-  gap: 12px;
-}
-
-.btn-modal-guide {
-  flex: 1;
-  background: #6E2218;
-  color: #FFFFFF;
-  text-decoration: none;
-  font-family: 'Sora', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
-  padding: 12px 16px;
-  border-radius: var(--radius-full);
-  text-align: center;
-  transition: all var(--transition);
-}
-
-.btn-modal-guide:hover {
-  background: #882A1E;
-}
-
-.btn-modal-github {
-  flex: 1;
-  background: #24140D;
-  color: #FFFFFF;
-  text-decoration: none;
-  font-family: 'Sora', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
-  padding: 12px 16px;
-  border-radius: var(--radius-full);
-  text-align: center;
-  transition: all var(--transition);
-}
-
-.btn-modal-github:hover {
-  background: #3B2418;
-}
-
-/* ==========================================================================
-   RESPONSIVE PARA CONTACTO, MAPA Y SITEMAP
-   ========================================================================== */
-@media (max-width: 960px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-  .sitemap-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  .contact-card {
-    padding: 24px 18px;
-  }
-  .sitemap-grid {
-    grid-template-columns: 1fr;
-  }
-  .apk-modal-actions {
-    flex-direction: column;
-  }
-}
-
-.spin {
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
 
 /* Badge de sincronización con Firebase */
@@ -2559,6 +2347,28 @@ footer.artisan-footer {
   0% { transform: scale(0.95); opacity: 0.7; }
   50% { transform: scale(1.3); opacity: 1; }
   100% { transform: scale(0.95); opacity: 0.7; }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive para contacto */
+@media (max-width: 960px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-card {
+    padding: 24px 18px;
+  }
 }
 
 
