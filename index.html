@@ -62,6 +62,7 @@
       <li><a href="#como-funciona" class="nav-link">Cómo funciona</a></li>
       <li><a href="#guia-estudiantes" class="nav-link">Guía del Alumno</a></li>
       <li><a href="#descarga" class="nav-link">Descargar</a></li>
+      <li><a href="#contacto" class="nav-link">Contacto</a></li>
     </ul>
 
     <div class="nav-actions">
@@ -574,13 +575,14 @@
     </p>
 
     <div class="download-cta-box">
-      <!-- Botón de Descarga APK Directa -->
-      <a href="https://github.com/Yessyess22/Yachay-idiomas" class="download-btn" target="_blank" rel="noopener noreferrer">
+      <!-- Botón de Descarga APK con aviso interactivo de Próximamente -->
+      <button type="button" class="download-btn btn-apk-trigger" id="btnDownloadApk" title="Haz clic para ver el estado de la APK">
         <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
           <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
         </svg>
-        Descargar APK Android
-      </a>
+        <span>Descargar APK Android</span>
+        <span class="badge-apk-soon">Próximamente</span>
+      </button>
 
       <!-- Botón Repositorio GitHub -->
       <a href="https://github.com/Yessyess22/Yachay-idiomas.git" class="repo-btn" target="_blank" rel="noopener noreferrer">
@@ -667,6 +669,176 @@
 </section>
 
 <!-- ═════════════════════════════════════════════
+     SECCIÓN CONTACTO, FORMULARIO Y UBICACIÓN UPDS COCHABAMBA
+     ═════════════════════════════════════════════ -->
+<section class="contact-section" id="contacto">
+  <div class="contact-container">
+    <div class="section-title-handwritten" style="justify-content: center; margin-bottom: 12px;">
+      <span class="tocapu-diamond"></span>
+      <span>Contacto & Sede Universitaria</span>
+    </div>
+    <p class="contact-subtitle">
+      Conéctate con el Ayllu Yachay. Envíanos tus aportes lingüísticos, sugerencias para la app o solicitudes de coordinación académica.
+    </p>
+
+    <div class="contact-grid">
+      <!-- Columna 1: Formulario de Contacto Interactivo -->
+      <div class="contact-card form-card">
+        <div class="card-badge-pill">
+          <span>Escríbenos al Ayllu</span>
+        </div>
+        <h3 class="contact-card-title">Envíanos un mensaje</h3>
+        <p class="contact-card-desc">
+          Completa el formulario y nuestro equipo te responderá a la brevedad posible.
+        </p>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="formNombre">Nombre completo <span class="req">*</span></label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+              <input type="text" id="formNombre" name="nombre" placeholder="Ej. Inti Quispe" required>
+            </div>
+            <span class="form-error" id="errorNombre"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="formEmail">Correo electrónico <span class="req">*</span></label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <input type="email" id="formEmail" name="email" placeholder="tucorreo@ejemplo.com" required>
+            </div>
+            <span class="form-error" id="errorEmail"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="formAsunto">Motivo de contacto <span class="req">*</span></label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+              <select id="formAsunto" name="asunto" required>
+                <option value="" disabled selected>Selecciona una opción...</option>
+                <option value="aporte">🗣️ Aporte lingüístico o cultural (Quechua)</option>
+                <option value="soporte">🛠️ Soporte técnico o sugerencia sobre la app</option>
+                <option value="academico">🏫 Coordinación académica o talleres (Colegios/Universidades)</option>
+                <option value="certificacion">📜 Consulta sobre Certificación Amawta</option>
+                <option value="otro">💬 Otra consulta general</option>
+              </select>
+            </div>
+            <span class="form-error" id="errorAsunto"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="formMensaje">Mensaje <span class="req">*</span></label>
+            <textarea id="formMensaje" name="mensaje" rows="4" placeholder="Escribe aquí tu mensaje o consulta para el equipo Yachay..." required></textarea>
+            <span class="form-error" id="errorMensaje"></span>
+          </div>
+
+          <button type="submit" class="btn-submit-contact" id="btnSubmitContact">
+            <span>Enviar Mensaje</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+        </form>
+
+        <!-- Mensaje de éxito interactivo post-envío -->
+        <div class="form-success-box" id="formSuccessBox" style="display: none;">
+          <div class="success-icon-wrap">✨ 🦙</div>
+          <h4>¡Añay! Mensaje enviado con éxito</h4>
+          <p id="successSummaryText">Tu mensaje ha sido recibido por el equipo de Yachay. Nos pondremos en contacto contigo muy pronto a través de tu correo.</p>
+          <button type="button" class="btn-reset-form" id="btnResetForm">Enviar otro mensaje</button>
+        </div>
+      </div>
+
+      <!-- Columna 2: Ubicación UPDS Cochabamba & Mapa Interactivo -->
+      <div class="contact-card location-card">
+        <div class="card-badge-pill">
+          <span>Sede Académica & Desarrollo</span>
+        </div>
+        <h3 class="contact-card-title">Universidad Privada Domingo Savio</h3>
+        <p class="contact-card-desc">
+          Sede Cochabamba, Bolivia — Espacio universitario de investigación pedagógica, desarrollo de software y validación comunitaria de Yachay.
+        </p>
+
+        <!-- Lista de Datos de Contacto Directo -->
+        <div class="location-details-list">
+          <div class="location-item">
+            <div class="loc-icon">📍</div>
+            <div class="loc-text">
+              <strong>Dirección:</strong>
+              <span>Calle Irigoyen # 1555, Zona Sarco, Cochabamba, Bolivia</span>
+            </div>
+          </div>
+
+          <div class="location-item">
+            <div class="loc-icon">📞</div>
+            <div class="loc-text">
+              <strong>Teléfono Central:</strong>
+              <a href="tel:+59144421743">(591-4) 442-1743</a>
+            </div>
+          </div>
+
+          <div class="location-item">
+            <div class="loc-icon">💬</div>
+            <div class="loc-text">
+              <strong>WhatsApp de Consultas:</strong>
+              <a href="https://wa.me/59161681770" target="_blank" rel="noopener noreferrer">+591 616-81770</a>
+            </div>
+          </div>
+
+          <div class="location-item">
+            <div class="loc-icon">✉️</div>
+            <div class="loc-text">
+              <strong>Correo Institucional:</strong>
+              <a href="mailto:infoupds.cochabamba@upds.edu.bo">infoupds.cochabamba@upds.edu.bo</a>
+            </div>
+          </div>
+
+          <div class="location-item">
+            <div class="loc-icon">⏰</div>
+            <div class="loc-text">
+              <strong>Horarios de Atención:</strong>
+              <span>Lunes a Viernes: 08:00 - 20:00 | Sábados: 08:30 - 12:30</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mapa Embebido de Google Maps con UPDS Cochabamba -->
+        <div class="map-wrapper">
+          <iframe 
+            src="https://maps.google.com/maps?q=Universidad+Privada+Domingo+Savio+Cochabamba+Bolivia&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+            title="Ubicación Universidad Privada Domingo Savio UPDS Cochabamba" 
+            class="google-map-iframe" 
+            loading="lazy" 
+            allowfullscreen>
+          </iframe>
+          <div class="map-actions-bar">
+            <span class="map-tag">📌 UPDS Sede Cochabamba</span>
+            <a href="https://maps.google.com/?q=Universidad+Privada+Domingo+Savio+Cochabamba+Bolivia" target="_blank" rel="noopener noreferrer" class="btn-open-map">
+              <span>Abrir en Google Maps</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════════
      FOOTER EN MARRÓN TIERRA CHOCOLATE PROFUNDO (#23120B)
      ═════════════════════════════════════════════ -->
 <footer class="artisan-footer">
@@ -675,18 +847,139 @@
       Empieza hoy tu viaje con Yachay
     </div>
     <div class="footer-callout-desc">
-      Descarga la app y da el primer paso hacia un nuevo idioma y su sabiduría ancestral.
+      Aprende Quechua, revitaliza nuestra sabiduría ancestral y abre nuevas puertas con la tecnología interactiva.
     </div>
 
+    <!-- Integración con Redes Sociales -->
+    <div class="social-section-block">
+      <span class="social-title">Conéctate a la comunidad Yachay:</span>
+      <div class="social-links-row">
+        <!-- Facebook -->
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn btn-facebook" aria-label="Facebook de Yachay">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+          </svg>
+          <span>Facebook</span>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn btn-instagram" aria-label="Instagram de Yachay">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          <span>Instagram</span>
+        </a>
+
+        <!-- TikTok -->
+        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-btn btn-tiktok" aria-label="TikTok de Yachay">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.97-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+          </svg>
+          <span>TikTok</span>
+        </a>
+
+        <!-- YouTube -->
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn btn-youtube" aria-label="YouTube de Yachay">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          <span>YouTube</span>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/59161681770" target="_blank" rel="noopener noreferrer" class="social-btn btn-whatsapp" aria-label="WhatsApp de Yachay">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+          <span>WhatsApp</span>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/Yessyess22/Yachay-idiomas.git" target="_blank" rel="noopener noreferrer" class="social-btn btn-github" aria-label="GitHub de Yachay">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
 
     <!-- Garabato de llamita y Sumaq kawsay -->
     <div class="footer-doodle-llama">
       Sumaq kawsay ✨ 🦙
     </div>
 
+    <!-- ═════════════════════════════════════════════
+         MAPA DEL SITIO (SITEMAP ESTRUCTURADO)
+         ═════════════════════════════════════════════ -->
+    <div class="sitemap-block">
+      <div class="sitemap-header">
+        <span class="tocapu-diamond"></span>
+        <h4 class="sitemap-main-title">Mapa del Sitio (Sitemap)</h4>
+      </div>
+      <div class="sitemap-grid">
+        <!-- Columna 1: Navegación -->
+        <div class="sitemap-col">
+          <h5 class="sitemap-col-title">Navegación Principal</h5>
+          <ul class="sitemap-links">
+            <li><a href="#inicio">Inicio (Hero & Portada)</a></li>
+            <li><a href="#caracteristicas">Características Clave</a></li>
+            <li><a href="#justificacion">Propósito & Manifiesto</a></li>
+            <li><a href="#como-funciona">¿Cómo funciona? (4 Pasos)</a></li>
+            <li><a href="#guia-estudiantes">Guía del Alumno</a></li>
+            <li><a href="#descarga">Zona de Descarga APK</a></li>
+            <li><a href="#faq">Preguntas Frecuentes</a></li>
+            <li><a href="#contacto">Contacto & Sede UPDS</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 2: Módulos de la App -->
+        <div class="sitemap-col">
+          <h5 class="sitemap-col-title">Módulos de la App</h5>
+          <ul class="sitemap-links">
+            <li><a href="#guia-estudiantes">Onboarding & Yachi</a></li>
+            <li><a href="#guia-estudiantes">Sendero Achahala (Nivel 1)</a></li>
+            <li><a href="#guia-estudiantes">Ejercicios de Emparejamiento</a></li>
+            <li><a href="#guia-estudiantes">Tienda & Mercado Andino</a></li>
+            <li><a href="#guia-estudiantes">Traductor Simi T'ikraq</a></li>
+            <li><a href="#guia-estudiantes">Biblioteca Yachay Wasi</a></li>
+            <li><a href="#guia-estudiantes">Perfil & Logros</a></li>
+            <li><a href="#guia-estudiantes">Acreditación Amawta</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Sede Académica -->
+        <div class="sitemap-col">
+          <h5 class="sitemap-col-title">Sede Académica</h5>
+          <ul class="sitemap-links">
+            <li><a href="#contacto">UPDS Sede Cochabamba</a></li>
+            <li><a href="#contacto">Calle Irigoyen # 1555</a></li>
+            <li><a href="#contacto">Formulario de Contacto</a></li>
+            <li><a href="#contacto">Soporte al Estudiante</a></li>
+            <li><a href="#contacto">Ubicación en Google Maps</a></li>
+            <li><a href="tel:+59144421743">Línea Telefónica UPDS</a></li>
+            <li><a href="https://wa.me/59161681770" target="_blank" rel="noopener noreferrer">WhatsApp de Consultas</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 4: Repositorio & Enlaces -->
+        <div class="sitemap-col">
+          <h5 class="sitemap-col-title">Comunidad & Código</h5>
+          <ul class="sitemap-links">
+            <li><a href="https://github.com/Yessyess22/Yachay-idiomas.git" target="_blank" rel="noopener noreferrer">Repositorio Oficial GitHub</a></li>
+            <li><a href="#descarga">Descarga Android APK</a></li>
+            <li><a href="#justificacion">Preservación del Runa Simi</a></li>
+            <li><a href="#faq">Variante Sureño (A-I-U)</a></li>
+            <li><a href="#inicio">Cosmovisión Andina</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Créditos y Colaboradores UPDS -->
     <div class="footer-credits-grid">
       <div class="footer-credits-col">
-        <h4 class="credits-title">COLABORADORES</h4>
+        <h4 class="credits-title">COLABORADORES DEL PROYECTO</h4>
         <ul class="credits-list">
           <li><span>Oscar Alejandro Segovia Villarreal</span></li>
           <li><span>Yessica Shirley Escobar Gutierres</span></li>
@@ -697,10 +990,10 @@
       <div class="footer-app-col">
         <h3 class="credits-app-name">Yachay</h3>
         <p class="credits-app-desc">
-          Aplicación Móvil para el Aprendizaje<br>
-          de la Lengua Quechua
+          Aplicación Móvil para el Aprendizaje de la Lengua Quechua<br>
+          <strong>Universidad Privada Domingo Savio (UPDS) — Cochabamba</strong>
         </p>
-        <span class="credits-copy">© 2026</span>
+        <span class="credits-copy">© 2026 Yachay Idiomas — Todos los derechos reservados.</span>
       </div>
     </div>
 
@@ -711,6 +1004,8 @@
         <li><a href="#justificacion">Propósito</a></li>
         <li><a href="#como-funciona">Cómo funciona</a></li>
         <li><a href="#guia-estudiantes">Guía del Alumno</a></li>
+        <li><a href="#descarga">Descarga</a></li>
+        <li><a href="#contacto">Contacto & Sede</a></li>
         <li><a href="https://github.com/Yessyess22/Yachay-idiomas.git" target="_blank" rel="noopener noreferrer">GitHub</a></li>
       </ul>
     </div>
@@ -725,6 +1020,43 @@
     <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar modal">&times;</button>
     <img id="lightboxImg" src="" alt="Captura de Pantalla Ampliada">
     <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+</div>
+
+<!-- ═════════════════════════════════════════════
+     MODAL INFORMATIVO "APK PRÓXIMAMENTE DISPONIBLE"
+     ═════════════════════════════════════════════ -->
+<div class="apk-modal" id="apkModal" role="dialog" aria-modal="true" aria-labelledby="apkModalTitle">
+  <div class="apk-modal-content">
+    <button class="apk-modal-close" id="apkModalClose" aria-label="Cerrar ventana">&times;</button>
+    <div class="apk-modal-header">
+      <div class="apk-modal-avatar">🦙</div>
+      <span class="apk-modal-badge">Fase Final de Compilación</span>
+      <h3 id="apkModalTitle">¡La APK oficial de Yachay llegará muy pronto!</h3>
+    </div>
+    <div class="apk-modal-body">
+      <p>
+        La versión oficial para dispositivos Android se encuentra actualmente en <strong>fase final de compilación y pruebas técnicas de sincronización offline</strong> por el equipo de desarrollo de la <strong>Universidad Privada Domingo Savio (UPDS) Cochabamba</strong>.
+      </p>
+      <div class="apk-modal-features">
+        <div class="apk-feature-row">
+          <span>⚡</span>
+          <span>Pronto disponible para descarga directa de instalador (.apk)</span>
+        </div>
+        <div class="apk-feature-row">
+          <span>📱</span>
+          <span>Compatible con Android 8.0 en adelante (100% offline)</span>
+        </div>
+        <div class="apk-feature-row">
+          <span>📖</span>
+          <span>Mientras tanto, puedes explorar la Guía del Alumno y el código fuente</span>
+        </div>
+      </div>
+    </div>
+    <div class="apk-modal-actions">
+      <a href="#guia-estudiantes" class="btn-modal-guide" id="btnModalGoGuide">Explorar Guía del Alumno</a>
+      <a href="https://github.com/Yessyess22/Yachay-idiomas.git" target="_blank" rel="noopener noreferrer" class="btn-modal-github">Ver Código en GitHub</a>
+    </div>
   </div>
 </div>
 

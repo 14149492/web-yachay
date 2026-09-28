@@ -160,4 +160,166 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   revealElements.forEach(el => observer.observe(el));
+
+  // ── FORMULARIO DE CONTACTO (AYLLU YACHAY) ──
+  const contactForm = document.getElementById('contactForm');
+  const formSuccessBox = document.getElementById('formSuccessBox');
+  const successSummaryText = document.getElementById('successSummaryText');
+  const btnResetForm = document.getElementById('btnResetForm');
+  const btnSubmitContact = document.getElementById('btnSubmitContact');
+
+  const inputNombre = document.getElementById('formNombre');
+  const inputEmail = document.getElementById('formEmail');
+  const inputAsunto = document.getElementById('formAsunto');
+  const inputMensaje = document.getElementById('formMensaje');
+
+  const errorNombre = document.getElementById('errorNombre');
+  const errorEmail = document.getElementById('errorEmail');
+  const errorAsunto = document.getElementById('errorAsunto');
+  const errorMensaje = document.getElementById('errorMensaje');
+
+  function clearError(input, errorElement) {
+    input?.classList.remove('error');
+    if (errorElement) {
+      errorElement.textContent = '';
+      errorElement.classList.remove('visible');
+    }
+  }
+
+  function setError(input, errorElement, message) {
+    input?.classList.add('error');
+    if (errorElement) {
+      errorElement.textContent = message;
+      errorElement.classList.add('visible');
+    }
+  }
+
+  [inputNombre, inputEmail, inputAsunto, inputMensaje].forEach(field => {
+    field?.addEventListener('input', () => {
+      clearError(field, document.getElementById(`error${field.id.replace('form', '')}`));
+    });
+    field?.addEventListener('change', () => {
+      clearError(field, document.getElementById(`error${field.id.replace('form', '')}`));
+    });
+  });
+
+  contactForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let isValid = true;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Validación Nombre
+    const nombreVal = inputNombre?.value.trim() || '';
+    if (!nombreVal || nombreVal.length < 3) {
+      setError(inputNombre, errorNombre, 'Por favor, ingresa tu nombre completo (mínimo 3 letras).');
+      isValid = false;
+    } else {
+      clearError(inputNombre, errorNombre);
+    }
+
+    // Validación Email
+    const emailVal = inputEmail?.value.trim() || '';
+    if (!emailVal || !emailRegex.test(emailVal)) {
+      setError(inputEmail, errorEmail, 'Por favor, ingresa un correo electrónico válido.');
+      isValid = false;
+    } else {
+      clearError(inputEmail, errorEmail);
+    }
+
+    // Validación Asunto
+    const asuntoVal = inputAsunto?.value || '';
+    if (!asuntoVal) {
+      setError(inputAsunto, errorAsunto, 'Por favor, selecciona el motivo de tu consulta.');
+      isValid = false;
+    } else {
+      clearError(inputAsunto, errorAsunto);
+    }
+
+    // Validación Mensaje
+    const mensajeVal = inputMensaje?.value.trim() || '';
+    if (!mensajeVal || mensajeVal.length < 10) {
+      setError(inputMensaje, errorMensaje, 'Por favor, escribe un mensaje de al menos 10 caracteres.');
+      isValid = false;
+    } else {
+      clearError(inputMensaje, errorMensaje);
+    }
+
+    if (isValid) {
+      // Estado de envío con botón cargando
+      if (btnSubmitContact) {
+        btnSubmitContact.disabled = true;
+        btnSubmitContact.innerHTML = `
+          <span>Enviando al Ayllu...</span>
+          <svg class="spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10" stroke-opacity="0.25"/>
+            <path d="M12 2a10 10 0 0 1 10 10"/>
+          </svg>
+        `;
+      }
+
+      setTimeout(() => {
+        // Ocultar formulario y mostrar confirmación
+        contactForm.style.display = 'none';
+        if (formSuccessBox) {
+          formSuccessBox.style.display = 'block';
+          if (successSummaryText) {
+            successSummaryText.innerHTML = `¡Añay (muchas gracias), <strong>${nombreVal}</strong>! Tu mensaje ha sido recibido por el equipo de Yachay en la <strong>UPDS Sede Cochabamba</strong>. Te responderemos a <strong>${emailVal}</strong> a la brevedad.`;
+          }
+        }
+        contactForm.reset();
+        if (btnSubmitContact) {
+          btnSubmitContact.disabled = false;
+          btnSubmitContact.innerHTML = `
+            <span>Enviar Mensaje</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          `;
+        }
+      }, 600);
+    }
+  });
+
+  btnResetForm?.addEventListener('click', () => {
+    if (formSuccessBox) formSuccessBox.style.display = 'none';
+    if (contactForm) contactForm.style.display = 'flex';
+  });
+
+  // ── MODAL PRÓXIMAMENTE APK ──
+  const apkModal = document.getElementById('apkModal');
+  const apkModalClose = document.getElementById('apkModalClose');
+  const apkTriggers = document.querySelectorAll('.btn-apk-trigger');
+  const btnModalGoGuide = document.getElementById('btnModalGoGuide');
+
+  function openApkModal() {
+    apkModal?.classList.add('open');
+  }
+
+  function closeApkModal() {
+    apkModal?.classList.remove('open');
+  }
+
+  apkTriggers.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openApkModal();
+    });
+  });
+
+  apkModalClose?.addEventListener('click', closeApkModal);
+  apkModal?.addEventListener('click', (e) => {
+    if (e.target === apkModal) closeApkModal();
+  });
+
+  btnModalGoGuide?.addEventListener('click', () => {
+    closeApkModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && apkModal?.classList.contains('open')) {
+      closeApkModal();
+    }
+  });
 });
