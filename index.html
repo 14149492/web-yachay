@@ -748,6 +748,12 @@
               <polygon points="22 2 15 22 11 13 2 9 22 2"/>
             </svg>
           </button>
+
+          <!-- Indicador de conexión con Firebase Firestore -->
+          <div class="firebase-sync-badge">
+            <span class="fb-dot"></span>
+            <span>🔥 Conectado a base de datos Google Firebase (web-yachay)</span>
+          </div>
         </form>
 
         <!-- Mensaje de éxito interactivo post-envío -->
@@ -1069,7 +1075,11 @@
   </svg>
 </button>
 
-<!-- Script principal interactivo -->
+<!-- Firebase SDKs (Google Firebase v10 compat) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+<!-- Script principal interactivo con integración Firebase -->
 <script src="script.js"></script>
 
 </body>

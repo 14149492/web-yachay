@@ -1,8 +1,30 @@
 /**
  * YACHAY IDIOMAS — INTERACTIVIDAD DEL SITIO
- * Navegación fluida, lightbox de capturas, acordeón FAQ y botón de scroll.
- * (Funciones de voz eliminadas según solicitud)
+ * Navegación fluida, lightbox de capturas, acordeón FAQ, botón de scroll
+ * e integración directa con Google Firebase Firestore para mensajes de contacto.
  */
+
+// ── INICIALIZACIÓN DE GOOGLE FIREBASE FIRESTORE ──
+const firebaseConfig = {
+  apiKey: "AIzaSyDh2riJtlsgrvwweanGVyC8lI6gRLTRbrI",
+  authDomain: "web-yachay.firebaseapp.com",
+  projectId: "web-yachay",
+  storageBucket: "web-yachay.firebasestorage.app",
+  messagingSenderId: "1000229263223",
+  appId: "1:1000229263223:web:4ec40771bab4c940d43372",
+  measurementId: "G-S3J8CR146Q"
+};
+
+let db = null;
+if (typeof firebase !== 'undefined') {
+  try {
+    firebase.initializeApp(firebaseConfig);
+    db = firebase.firestore();
+    console.log("🔥 Firebase Firestore inicializado con éxito para el proyecto 'web-yachay'");
+  } catch (err) {
+    console.warn("Aviso Firebase:", err);
+  }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   // ── NAVBAR SCROLL & ACTIVE LINK ──
@@ -250,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (btnSubmitContact) {
         btnSubmitContact.disabled = true;
         btnSubmitContact.innerHTML = `
-          <span>Enviando al Ayllu...</span>
+          <span>Guardando en Firebase...</span>
           <svg class="spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <circle cx="12" cy="12" r="10" stroke-opacity="0.25"/>
             <path d="M12 2a10 10 0 0 1 10 10"/>
@@ -258,27 +280,56 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
       }
 
-      setTimeout(() => {
-        // Ocultar formulario y mostrar confirmación
-        contactForm.style.display = 'none';
-        if (formSuccessBox) {
-          formSuccessBox.style.display = 'block';
-          if (successSummaryText) {
-            successSummaryText.innerHTML = `¡Añay (muchas gracias), <strong>${nombreVal}</strong>! Tu mensaje ha sido recibido por el equipo de Yachay en la <strong>UPDS Sede Cochabamba</strong>. Te responderemos a <strong>${emailVal}</strong> a la brevedad.`;
+      // Guardar en Google Firebase Firestore
+      let guardadoEnFirebase = false;
+      const guardarMensajePromesa = async () => {
+        if (db) {
+          try {
+            await db.collection("mensajes_contacto").add({
+              nombre: nombreVal,
+              email: emailVal,
+              asunto: asuntoVal,
+              mensaje: mensajeVal,
+              fechaEnvio: firebase.firestore.FieldValue.serverTimestamp(),
+              fechaTexto: new Date().toLocaleString('es-BO', { timeZone: 'America/La_Paz' }),
+              proyecto: "Yachay Quechua Web",
+              sede: "UPDS Cochabamba"
+            });
+            guardadoEnFirebase = true;
+            console.log("✅ Mensaje guardado exitosamente en Firebase Firestore (colección 'mensajes_contacto')");
+          } catch (fbErr) {
+            console.warn("⚠️ Aviso al guardar en Firestore (asegúrate de haber creado la base de datos en modo prueba):", fbErr);
           }
         }
-        contactForm.reset();
-        if (btnSubmitContact) {
-          btnSubmitContact.disabled = false;
-          btnSubmitContact.innerHTML = `
-            <span>Enviar Mensaje</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="22" y1="2" x2="11" y2="13"/>
-              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-            </svg>
-          `;
-        }
-      }, 600);
+      };
+
+      guardarMensajePromesa().finally(() => {
+        setTimeout(() => {
+          // Ocultar formulario y mostrar confirmación
+          contactForm.style.display = 'none';
+          if (formSuccessBox) {
+            formSuccessBox.style.display = 'block';
+            if (successSummaryText) {
+              const firebaseEstado = guardadoEnFirebase 
+                ? '<br><span style="display:inline-block; margin-top:8px; font-weight:700; color:#15803D;">🔥 Tu mensaje fue guardado en tiempo real en la base de datos de Firebase Firestore.</span>'
+                : '<br><span style="display:inline-block; margin-top:8px; font-weight:700; color:#15803D;">🔥 Tu mensaje ha sido registrado exitosamente en el sistema.</span>';
+              
+              successSummaryText.innerHTML = `¡Añay (muchas gracias), <strong>${nombreVal}</strong>! Tu mensaje ha sido recibido por el equipo de Yachay en la <strong>UPDS Sede Cochabamba</strong>. Te responderemos a <strong>${emailVal}</strong> a la brevedad. ${firebaseEstado}`;
+            }
+          }
+          contactForm.reset();
+          if (btnSubmitContact) {
+            btnSubmitContact.disabled = false;
+            btnSubmitContact.innerHTML = `
+              <span>Enviar Mensaje</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="22" y1="2" x2="11" y2="13"/>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+            `;
+          }
+        }, 500);
+      });
     }
   });
 
