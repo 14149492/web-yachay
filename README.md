@@ -35,8 +35,9 @@ Sitio web oficial, interactivo y moderno para la aplicación móvil **Yachay (Ap
    - Acordeón interactivo con dudas comunes sobre modo offline y costo.
 
 6. **Zona de Descarga & Enlaces**:
-   - Enlace directo a la APK para Android: [Descargar APK (EAS Build 1c003e3a)](https://expo.dev/artifacts/eas/hBexnMv6BbO1DEKGEulnecv7UyOdWN4Z4P2-Za_BD78.apk).
-   - Enlace al build en Expo EAS: [Build 1c003e3a — @yessyess/Yachay](https://expo.dev/accounts/yessyess/projects/Yachay/builds/1c003e3a-8f74-4107-bcfe-12620b6a5679).
+   - Enlace directo a la APK para Android: [Descargar APK (EAS Build b9f80dee)](https://expo.dev/artifacts/eas/kzta1B8mKbXn5nofeuqu2mEuw7wEfuYee1VitR-qeeM.apk).
+   - Código QR oficial para escaneo directo desde dispositivos móviles (`img/qr_descarga_yachay.png`).
+   - Enlace al build en Expo EAS: [Build b9f80dee — @yessyess/Yachay](https://expo.dev/accounts/yessyess/projects/Yachay/builds/b9f80dee-ba29-49cb-a5fc-4985d2315187).
    - Enlace al repositorio oficial en GitHub: [Yessyess22/Yachay-idiomas](https://github.com/Yessyess22/Yachay-idiomas.git).
 
 ---
