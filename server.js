@@ -2,7 +2,9 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = process.env.PORT || 3000;
+const DEFAULT_PORTS = [8080, 5173, 8000, 3000];
+let portIndex = 0;
+const targetPort = process.env.PORT ? parseInt(process.env.PORT, 10) : DEFAULT_PORTS[0];
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -43,6 +45,28 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`Servidor de Yachay corriendo en: http://localhost:${PORT}`);
-});
+function startServer(port) {
+  server.removeAllListeners('error');
+  server.once('error', (err) => {
+    if (err.code === 'EACCES' || err.code === 'EADDRINUSE') {
+      console.warn(`⚠️ Puerto ${port} no disponible (${err.code}). Probando siguiente puerto...`);
+      portIndex++;
+      if (portIndex < DEFAULT_PORTS.length) {
+        startServer(DEFAULT_PORTS[portIndex]);
+      } else {
+        console.error('❌ No se encontró ningún puerto disponible.');
+      }
+    } else {
+      console.error('Error al iniciar el servidor:', err);
+    }
+  });
+
+  server.listen(port, () => {
+    console.log(`\n======================================================`);
+    console.log(` 🦙 Servidor Yachay ACTIVO y listo`);
+    console.log(` 👉 http://localhost:${port}`);
+    console.log(`======================================================\n`);
+  });
+}
+
+startServer(targetPort);
